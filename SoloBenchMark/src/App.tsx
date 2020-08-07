@@ -1,8 +1,10 @@
 import * as React from 'react';
+import "./App.css"
 import Titles from "./components/Titles";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 interface IAppStates {
     temperature: number | undefined,
@@ -58,9 +60,7 @@ class App extends React.Component<{}, IAppStates> {
 
     render() {
         return (
-            <div style={{
-                        margin:"auto",
-                        width: "50%"}}>
+            <div style={{marginTop:"300px"}}>
                 <Titles />
                 <Form getWeather={this.getWeather}/>
                 <Weather
