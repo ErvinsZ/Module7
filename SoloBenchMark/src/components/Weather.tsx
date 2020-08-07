@@ -21,7 +21,7 @@ class Weather extends React.Component<IWeatherProps, IWeatherStates> {
     render() {
         return (
             <>
-            <div style={{paddingTop:"60px"}}>
+            <div style={{paddingTop:"60px", fontWeight:500}}>
             <div style={{display:"flex",
                         alignItems: "center",
                         justifyContent: "center",
