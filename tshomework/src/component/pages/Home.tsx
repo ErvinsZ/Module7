@@ -7,6 +7,8 @@ interface HomeState {
     songs: [],
     search: string
 }
+
+
 class Home extends Component <HomeState> {
     state: HomeState={
         songs:[],
@@ -15,11 +17,11 @@ class Home extends Component <HomeState> {
     render(){
            
 
-    s = (event) => {
+    let s = (event) => {
         this.setState({search: event.currentTarget.value})
     }
 
-    fetchData = async() => {
+    let fetchData = async() => {
    const response= await fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=" + this.state.search, {
         "method": "GET",
         "headers": {
