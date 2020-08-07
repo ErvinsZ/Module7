@@ -1,4 +1,5 @@
 import * as React from "react";
+import {WiHumidity} from "react-icons/wi"
 
 interface IWeatherProps {
     temperature: number | undefined,
@@ -21,25 +22,13 @@ class Weather extends React.Component<IWeatherProps, IWeatherStates> {
     render() {
         return (
             <>
-            <div style={{paddingTop:"60px", fontWeight:500}}>
-            <div style={{display:"flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexDirection: "row"}}>
-
-               <span style={{paddingRight:"70px"}}>{this.props.city && this.props.country && <p>Location: {this.props.city}, {this.props.country}</p>}</span> 
+            <div style={{paddingTop:"60px", fontWeight:500, fontSize:"30px", display:"flex", justifyContent:"space-evenly"}}>
+                {this.props.city && this.props.country && <p>Location: {this.props.city}, {this.props.country}</p>}
                 {this.props.temperature && <p>Temperature: {this.props.temperature} °C</p>}
-                </div>
-
-                <div style={{display:"flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "row"}}>
-
-                <span style={{paddingRight:"70px"}}>{this.props.humidity && <p>Humidity: {this.props.humidity}</p>}</span>
+                {this.props.humidity && <p>Humidity: {this.props.humidity}<WiHumidity style={{paddingBottom:"7px", fontSize:"40px"}}/></p>}
                 {this.props.description && <p>Conditions: {this.props.description}</p>}
-                {this.props.error && <p>Error: {this.props.error} </p>}
-            </div>
+                {this.props.error && <p>{this.props.error} </p>}
+        
             </div>
             </>
         );
