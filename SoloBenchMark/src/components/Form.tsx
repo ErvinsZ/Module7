@@ -18,7 +18,9 @@ class Form extends React.Component<IFormComponentProps, IFormComponentStates> {
             <form className="form" onSubmit={this.props.getWeather}>
                 <input className="input" type="text" name="city" placeholder="City.."/>
                 <input className="input" type="text" name="country" placeholder="Country.."/>
-                <button>Get Weather</button>
+                <div className="wrapper">
+                <button id="btn">Get Weather</button>
+                </div>
             </form>
         );
     }
